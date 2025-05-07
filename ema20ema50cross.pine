@@ -14,10 +14,9 @@ short = sma20 < sma50
 
 lotsize = 1000 // how much to trade
 
-if long
+if long // close shorts and go long
     strategy.close("Short")
     strategy.entry("Long", strategy.long, lotsize)
-if short
+if short // close longs and go short
     strategy.close("Long")
     strategy.entry("Short", strategy.short, lotsize)
-   
